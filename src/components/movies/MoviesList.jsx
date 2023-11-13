@@ -4,11 +4,12 @@ import "../movies/MoviesList.css";
 
 export const MoviesList = () => {
     const [moviesList, setMoviesList] = useState([]);
-    const api_key = "27e08820918015780dc134fac22dd08b";
+    const apiEnv = import.meta.env.VITE_OPENDB_KEY;
+    // const api_key = "27e08820918015780dc134fac22dd08b";
     const navigate = useNavigate();
 
     const getMovies = () => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`)
         .then((res) => res.json())
         .then(json => setMoviesList(json.results)
         );
