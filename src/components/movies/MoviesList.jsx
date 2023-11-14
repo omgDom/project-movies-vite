@@ -9,11 +9,16 @@ export const MoviesList = () => {
     const navigate = useNavigate();
 
     const getMovies = () => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`)
-        .then((res) => res.json())
-        .then(json => setMoviesList(json.results)
-        );
-    }
+      fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((json) => setMoviesList(json.results))
+      .catch((error) => console.error('Error loading movies:', error));
+  };
 
     useEffect(()=>{
         getMovies();
