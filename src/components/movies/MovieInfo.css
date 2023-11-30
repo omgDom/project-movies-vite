@@ -35,6 +35,7 @@
     max-width: 100%;
     height: auto;
     border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
   }
 
   .movieInfoDetails {
@@ -52,6 +53,12 @@
     text-align: left;
     max-width: 400px;
     font-size: 1.2rem;
+    background: rgba(240, 240, 240, .5);
+    backdrop-filter: blur(4px);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    user-select: none;
 }
 
 @media screen and (max-width: 768px) {
