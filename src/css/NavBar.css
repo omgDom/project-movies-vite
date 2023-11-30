@@ -51,7 +51,7 @@ ul li:hover {
 }
 
 .navBarLogo {
-    display: inline-block;
+    display: block;
     font-size: 2rem;
     margin: 2rem 0 0 6rem;
     color: var(--primaryColor);
@@ -63,4 +63,24 @@ ul li:hover {
     transform: scale(1.02);
     text-shadow: 0 10px 22px #2c2b2b;
     transition: 300ms ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .navContainer {
+        margin-top: 10px;
+        display: flex;
+        padding-left: 100px;
+    }
+    .navBarLogo {
+        margin: 20px 0 0 0;
+    }
+    li {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
 }
